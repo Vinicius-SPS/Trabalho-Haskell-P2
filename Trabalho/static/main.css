@@ -4,16 +4,7 @@
     margin:0px;
 }
 
-/*NAV BAR*/
-.top-bar{
-    border-style: solid;
-    border-width: 1px;
-    border-color: #EDEEE8;
-    height: 10vh;
-    background-color: #EDEEE0;
 
-
-}
 /*HOME*/
 
 .borda-home-pesquisa{
@@ -43,15 +34,32 @@
 
 }
 
-/*footer*/
-.footer{
-    background-color: #50223C;
-    height: 15vh;
-    width: auto
 
+
+
+
+/*FOOTER*/
+
+.footer{
+  border: 1px solid black;
+  width: 100%;
+  height: 20vh;
+  margin-top: 0%;
+  background-color:  #50223C;
 }
-.empresa-footer{
-    color: #F58427;
+
+.footer ul{
+  list-style-type: none;
+  color:#F58427;
+}
+.footer-mesa-livre li {
+  list-style-type: none;
+  color:#F58427;
+}
+
+.footer-info-geral, .redesSociais{
+  display: flex;
+  flex-direction: row;
 }
 
 .footer-link{
@@ -66,18 +74,6 @@
     background-size: 60px 60px;
 }
 
-.container .fakeImg {
-    background: no-repeat center;
-    background-size: cover;
-}
-
-.container
-{
-    display:inline-block;
-    border:2px solid red;
-    margin: 4px;
-}
-
 
 .imagem-footer-facebook{
     background-image: url(/static/facebook.png);
@@ -85,3 +81,4 @@
     background-size: 60px 60px;
 
 }
+
