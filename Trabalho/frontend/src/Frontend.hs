@@ -29,45 +29,48 @@ frontend = Frontend{
 _frontend_head = do
       el "title" $ text "Mesa Livre"
       elAttr "link" ("href" =: static @"main.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
+      elAttr "link" ("href" =: static @"css/bootstrap.min.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
+      elAttr "link" ("href" =: static @"css/style.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
 , _frontend_body = do
     prerender_ blank $ liftJSM $ void $ eval ("console.log('Hello, World!')" :: T.Text)
     --elClass "p" "teste" $ text "Testando CSS!"   divClass "" $ do
     -- el "p" $ text $ T.pack commonStuff
 
-    --Header
-    divClass "top-bar" $ do
-        elClass "div" "Logo" $ do
-            el "p" $ text "Mesa Livre"
+-----------------------------HEADER-----------------------------
 
-        elClass "ul" "" $ do
-            elClass "li" "p" $ text "Entrar"
-            elClass "li" "p" $ text "Cadastrar"
+    elClass "nav" "navbar-default" $ do
+        divClass "container-fluid" $ do
+            elClass "div" "Logo nav navbar navbar-left" $ do
+                elClass "p" "navbar-brand" $ text "Mesa Livre"
 
+{-- VER COMO ARRUMAR
+        divClass "collapse navbar-collapse" $ do
+            elClass "ul" "nav navbar-nav navbar-right" $ do
+                elClass "li" "p" $ text "Entrar"
+                elClass "li" "p" $ text "Cadastrar"
+--}
 
-
-    --Corpo
+-----------------------------CORPO-----------------------------
     divClass "borda-home-pesquisa imagem-index" $ do
         divClass "container-home" $ do
-            elClass "input"  "tamanho" $ text "Pesquisar"
-            elClass "button" ""$ text "Pesquisar"
+            elClass "input"  "form-control" $ text "Pesquisar"
+            elClass "button" "btn-default"$ text "Pesquisar"
 
 
 
-    --Footer
+-----------------------------FOOTER-----------------------------
     divClass "borda footer" $ do
-        elClass "div" "footer-info" $ do
-            el "ul" $ do
+        elClass "ul" "footer-info-geral" $ do
+            elClass "ul" "footer-mesa-livre" $ do
                 elClass "h4" "empresa-footer" $ text "Mesa Livre"
                 elClass "li" "footer-link" (text "Sobre")
                 elClass "li" "footer-link" (text "Contato")
                 elClass "li" "footer-link" (text "Suporte")
-{--
-        elClass "div" "footer-info" $ do
-            el "ul" $ do
-                elClass "h4" "empresa-footer" $ text "Mesa Livre"
-                elClass "li" "imagem-footer-facebook" (text "")
-                elClass "li" "imagem-footer-twitter"  (text "")
---}
+
+            elClass "ul" "footer-redes" $ do
+                elClass "h4" "empresa-footer" $ text "Redes Sociais"
+                elClass "li" "footer-link" (text "Facebook") -- como por imagem aqui
+                elClass "li" "footer-link" (text "Twitter") -- como por imagem aqui
 
     return ()
   }
