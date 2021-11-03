@@ -1,0 +1,15 @@
+frontend/src/Frontend.hs:9:1-40: warning: [-Wunused-imports]
+    The qualified import of ‘Data.Text.Encoding’ is redundant
+  |
+9 | import qualified Data.Text.Encoding as T
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+frontend/src/Frontend.hs:13:1-22: warning: [-Wunused-imports]
+    The import of ‘Obelisk.Configs’ is redundant
+   |
+13 | import Obelisk.Configs
+   | ^^^^^^^^^^^^^^^^^^^^^^
+frontend/src/Frontend.hs:20:1-17: warning: [-Wunused-imports]
+    The import of ‘Common.Api’ is redundant
+   |
+20 | import Common.Api
+   | ^^^^^^^^^^^^^^^^^

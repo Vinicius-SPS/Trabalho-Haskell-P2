@@ -1,0 +1,87 @@
+
+*{
+    box-sizing: border-box;
+    margin:0px;
+}
+
+/*NAV BAR*/
+.top-bar{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #EDEEE8;
+    height: 10vh;
+    background-color: #EDEEE0;
+
+
+}
+/*HOME*/
+
+.borda-home-pesquisa{
+    border-style: solid;
+    border-width: 1px;
+    border-color: solid black;
+    height: 90vh;
+}
+
+.imagem-index{
+    background-image: url(/static/home-img.jpg);
+    height: 90vh;
+
+
+}
+
+.container-home{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tamanho{
+    width: 20%;
+
+}
+
+/*footer*/
+.footer{
+    background-color: #50223C;
+    height: 15vh;
+    width: auto
+
+}
+.empresa-footer{
+    color: #F58427;
+}
+
+.footer-link{
+    display:flex;
+    list-style-type: none;
+    color: blue;
+}
+
+.imagem-footer-twitter{
+    background-image: url(/static/twitter.png);
+    list-style-type: none;
+    background-size: 60px 60px;
+}
+
+.container .fakeImg {
+    background: no-repeat center;
+    background-size: cover;
+}
+
+.container
+{
+    display:inline-block;
+    border:2px solid red;
+    margin: 4px;
+}
+
+
+.imagem-footer-facebook{
+    background-image: url(/static/facebook.png);
+    list-style-type: none;
+    background-size: 60px 60px;
+
+}
