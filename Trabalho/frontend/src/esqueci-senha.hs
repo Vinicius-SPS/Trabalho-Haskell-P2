@@ -51,28 +51,21 @@ _frontend_head = do
 --}
 
 -----------------------------CORPO-----------------------------
-    divClass "imagem-login" $ do
-        divClass "login-container" $ do
-            elClass "div" "box" $ do
+    divClass "imagem-esqueci" $ do
+        divClass "esqueci-container" $ do
+            elClass "div" "esqueci-box" $ do
                 elClass "ul" "" $ do
-                    elClass "li" "elemento-login-box" $ do
-                        elClass "h3"  "" $ text "Login"
+                    elClass "li" "elemento-box" $ do
+                        elClass "h3"  "" $ text "Esqueci a Senha"
 
-                    elClass "li" "elemento-login-box" $ do
-                        elClass "p" "" $ text "Digite o e-mail"
-                    elClass "li" "elemento-login-box" $ do
+                    elClass "li" "elemento-box" $ do
+                        elClass "p" "" $ text "Digite o e-mail da conta para poder recuperar a senha."
+
+                    elClass "li" "elemento-box" $ do
                         elClass "input"  "" $ text "Digite o e-mail"
 
-                    elClass "li" "elemento-login-box" $ do
-                        elClass "p" "" $ text "Digite a Senha"
-                    elClass "li" "elemento-login-box" $ do
-                        elClass "input"  "" $ text "Digite a senha"
-
-                    elClass "li" "elemento-login-box" $ do
-                        elClass "a"  "" $ text "Esqueci a senha"
-
-                    elClass "li" "elemento-login-box" $ do
-                        elClass "button" "btn-default"$ text "Entrar"
+                    elClass "li" "elemento-box" $ do
+                        elClass "button" "btn-default"$ text "Enviar"
 
 
 
@@ -93,3 +86,4 @@ _frontend_head = do
 
     return ()
   }
+

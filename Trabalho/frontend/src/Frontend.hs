@@ -30,7 +30,7 @@ _frontend_head = do
       el "title" $ text "Mesa Livre"
       elAttr "link" ("href" =: static @"main.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
       elAttr "link" ("href" =: static @"css/bootstrap.min.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
-      elAttr "link" ("href" =: static @"css/style.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
+--      elAttr "link" ("href" =: static @"css/style.css" <> "type" =: "text/css" <> "rel" =: "stylesheet") blank
 , _frontend_body = do
     prerender_ blank $ liftJSM $ void $ eval ("console.log('Hello, World!')" :: T.Text)
     --elClass "p" "teste" $ text "Testando CSS!"   divClass "" $ do
@@ -51,10 +51,22 @@ _frontend_head = do
 --}
 
 -----------------------------CORPO-----------------------------
-    divClass "borda-home-pesquisa imagem-index" $ do
-        divClass "container-home" $ do
-            elClass "input"  "form-control" $ text "Pesquisar"
-            elClass "button" "btn-default"$ text "Pesquisar"
+    divClass "imagem-esqueci" $ do
+        divClass "esqueci-container" $ do
+            elClass "div" "esqueci-box" $ do
+                elClass "ul" "" $ do
+                    elClass "li" "elemento-box" $ do
+                        elClass "h3"  "" $ text "Esqueci a Senha"
+
+                    elClass "li" "elemento-box" $ do
+                        elClass "p" "" $ text "Digite o e-mail da conta para poder recuperar a senha."
+
+                    elClass "li" "elemento-box" $ do
+                        elClass "input"  "" $ text "Digite o e-mail"
+
+                    elClass "li" "elemento-box" $ do
+                        elClass "button" "btn-default"$ text "Enviar"
+
 
 
 
