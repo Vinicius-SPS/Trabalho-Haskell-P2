@@ -51,42 +51,18 @@ _frontend_head = do
 --}
 
 -----------------------------CORPO-----------------------------
-    divClass "imagem-login" $ do
-        divClass "cadastro-container" $ do
-            elClass "div" "cadastro-box" $ do
-                elClass "ul" "" $ do
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "h3"  "" $ text "Login"
+    divClass "imagem-cadastro-escolher" $ do
+       divClass "cadastro-container" $ do
+            divClass "opcao-cadastro" $ do
+                elClass "a" "titulo-opcao" $ text "Cadastrar como Cliente"
 
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "p" "" $ text "Digite o e-mail"
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "input"  "" $ text "Digite o e-mail"
-
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "p" "" $ text "Digite novamente o e-mail"
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "input"  "" $ text "Digite o e-mail"
-
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "p" "" $ text "Digite a Senha"
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "input"  "" $ text "Digite a senha"
-
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "p" "" $ text "Digite novamente a Senha"
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "input"  "" $ text "Digite a senha"
-
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "a"  "" $ text "Termos de uso"
+            divClass "opcao-cadastro" $ do
+                elClass "a" "titulo-opcao" $ text "Cadastrar como Restaurante"
 
 
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "button" "btn-default"$ text "Cadastrar"
-
-
-
+{--
+   "
+--}
 
 -----------------------------FOOTER-----------------------------
     divClass "borda footer" $ do
@@ -104,3 +80,4 @@ _frontend_head = do
 
     return ()
   }
+
