@@ -161,3 +161,84 @@
 
 
 
+
+/*CADASTRO ESCOLHER | CADASTRO RESTAURANTE | CADASTRO RESTAURANTE*/
+.imagem-cadastro-escolher{
+  background-image: url(/static/south-station-4927286_1920.jpg);
+}
+
+.cadastro{
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 35vh;
+  height: 50vh;
+
+}
+.cadastro-box{
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  width: 50vh;
+  height: 60vh;
+  margin-top: -10%;
+}
+
+.elemento-cadastro-box , .elemento-registro-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: -13%;
+  height: 40%;
+}
+
+.cadastro-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cadastro-restaurante{
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 50vh;
+  height: 50vh;
+}
+
+.centro-cadastro{
+  margin-top:0%;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.opcao-cadastro{
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 30%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15vh;
+  margin-right: 15vh;
+  background-color:white;
+}
+
+.titulo-opcao{
+  text-align: center;
+  font-size: 5vh;
+
+}
+
+
+
