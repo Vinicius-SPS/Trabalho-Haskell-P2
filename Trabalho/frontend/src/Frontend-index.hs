@@ -37,18 +37,44 @@ _frontend_head = do
     -- el "p" $ text $ T.pack commonStuff
 
 -----------------------------HEADER-----------------------------
-
+{--
     elClass "nav" "navbar-default" $ do
         divClass "container-fluid" $ do
             elClass "div" "Logo nav navbar navbar-left" $ do
                 elClass "p" "navbar-brand" $ text "Mesa Livre"
 
-{-- VER COMO ARRUMAR
-        divClass "collapse navbar-collapse" $ do
-            elClass "ul" "nav navbar-nav navbar-right" $ do
-                elClass "li" "p" $ text "Entrar"
-                elClass "li" "p" $ text "Cadastrar"
+
+        divClass "collapse navbar-collapse navbar-right" $ do
+                elAttr "a" ("class" =: "btn-nav"  <> "href" =: "src/Frontend.hs") $ text "Entrar"
+                elAttr "a" ("class" =: "btn-nav"  <> "href" =: "cadastro-escolher.hs") $ text "   Cadastrar"
+
 --}
+    elClass "nav" "navbar-default" $ do
+        divClass "container-fluid" $ do
+           divClass "container-header" $ do
+                elClass "div" "Logo nav navbar navbar-left" $ do
+                    elAttr "button" (
+                                     "type" =: "button" <>
+                                     "class" =: "navbar-toggle collapsed" <>
+                                     "data-tougle" =: "collapse" <>
+                                     "data-target" =: "#bs-example-navbar-collapse-1" <>
+                                     "aria-expand" =: "false") $ do
+                         elClass "span" "icon-bar" $ blank
+                         elClass "span" "icon-bar" $ blank
+                         elClass "span" "icon-bar" $ blank
+                    elClass "a" "navbar-brand" $ text "Mesa Livre"
+
+                divClass "collapse navbar-collapse navbar-right" $ do
+                    elAttr "a" ("class" =: "btn-nav"  <> "href" =: "src/Frontend.hs") $ text "Entrar"
+                    elAttr "a" ("class" =: "btn-nav"  <> "href" =: "cadastro-escolher.hs") $ text "   Cadastrar"
+
+
+
+                elAttr "div" ("class" =: "collapse navbar-collapse" <> "id" =: "#bs-example-navbar-collapse-1" ) $ do
+                    elClass "ul" "nav navbar-nav navbar-right" $ do
+                        elAttr "link" ("type" =: "ul" <> "class" =: "btn-nav"  <> "href" =: "src/Frontend.hs") $ text "Entrar"
+                        elAttr "link" ("type" =: "ul" <> "class" =: "btn-nav"  <> "href" =: "cadastro-escolher.hs") $ text "   Cadastrar"
+
 
 -----------------------------CORPO-----------------------------
     divClass "borda-home-pesquisa imagem-index" $ do
