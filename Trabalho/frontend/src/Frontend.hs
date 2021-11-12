@@ -40,21 +40,24 @@ menuLi = do
         p1 <- clickLi Entrar "Entrar"
         p2 <- clickLi EscolherCad "Cadastrar"
         p3 <- clickLi Index "Home"
-        return (leftmost [p1,p2])
-    holdDyn Index2 evs
+        return (leftmost [p1,p2,p3])
+    holdDyn Index evs
 
 currPag :: (DomBuilder t m, MonadHold t m, PostBuild t m) => Pagina -> m ()
 currPag p =
     case p of
         Index -> home
-        Index2 -> home2
         Entrar -> login
         EscolherCad -> escolherCad
         Esqueci -> esqueci
         CadCliente -> cadCliente
 
 
+
+
+
 --FOOTER E HEADER
+--{--
 header ::  DomBuilder t m => m()
 header = do
         elClass "nav" "navbar navbar-default" $ do
@@ -89,7 +92,7 @@ header = do
                     elAttr "p" ("class" =: "btn-nav"  <> "href" =: "src/Frontend.hs") $ do
                     elAttr "p" ("class" =: "btn-nav"  <> "href" =: "cadastro-escolher.hs") $ text "Cadastrar"
                 --}
-
+--}
 footer :: DomBuilder t m => m()
 footer = do
     divClass "borda footer" $ do
@@ -114,64 +117,53 @@ mainPag = do
 -- INDEX
 home :: (DomBuilder t m, MonadHold t m, PostBuild t m) => m ()
 home = do
-        header
-        divClass "borda-home-pesquisa imagem-index" $ do
+       -- header
+        divClass "imagem-index" $ do
         divClass "container-home" $ do
             elClass "input"  "form-control" $ text "Pesquisar"
             elClass "button" "btn-default"$ text "Pesquisar"
-        footer
+       -- footer
 
 home2 :: (DomBuilder t m, MonadHold t m, PostBuild t m) => m ()
 home2 = do
-        header
+        --header
         divClass "borda-home-pesquisa imagem-index" $ do
         divClass "container-home" $ do
             elClass "input"  "form-control" $ text "Pesquisar"
             elClass "button" "btn-default"$ text "Pesquisar"
-        footer
+      --  footer
 --LOGIN
 login :: DomBuilder t m => m()
 login = do
-    header
+    --header
     divClass "imagem-login" $ do
-        divClass "cadastro-container" $ do
-            elClass "div" "cadastro-box" $ do
+        divClass "login-container" $ do
+            elClass "div" "login-box" $ do
                 elClass "ul" "" $ do
-                    elClass "li" "elemento-cadastro-box" $ do
+                    elClass "li" "elemento-login-box" $ do
                         elClass "h3"  "" $ text "Login"
 
-                    elClass "li" "elemento-cadastro-box" $ do
+                    elClass "li" "elemento-login-box" $ do
                         elClass "p" "" $ text "Digite o e-mail"
                     elClass "li" "elemento-cadastro-box" $ do
                         elClass "input"  "" $ text "Digite o e-mail"
 
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "p" "" $ text "Digite novamente o e-mail"
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "input"  "" $ text "Digite o e-mail"
 
-                    elClass "li" "elemento-cadastro-box" $ do
+
+                    elClass "li" "elemento-login-box" $ do
                         elClass "p" "" $ text "Digite a Senha"
                     elClass "li" "elemento-cadastro-box" $ do
                         elClass "input"  "" $ text "Digite a senha"
 
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "p" "" $ text "Digite novamente a Senha"
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "input"  "" $ text "Digite a senha"
 
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "a"  "" $ text "Termos de uso"
-
-
-                    elClass "li" "elemento-cadastro-box" $ do
-                        elClass "button" "btn-default"$ text "Cadastrar"
-    footer
+                    elClass "li" "elemento-login-box" $ do
+                        elClass "button" "btn-default"$ text "Login"
+    --footer
 
 --ESQUECI SENHA
 esqueci :: DomBuilder t m => m()
 esqueci= do
-        header
+       -- header
         divClass "imagem-esqueci" $ do
         divClass "esqueci-container" $ do
             elClass "div" "esqueci-box" $ do
@@ -187,12 +179,12 @@ esqueci= do
 
                     elClass "li" "elemento-box" $ do
                         elClass "button" "btn-default"$ text "Enviar"
-        footer
+       -- footer
 
 --ESCOLHER CADASTRO
 escolherCad :: DomBuilder t m => m()
 escolherCad = do
-        header
+       -- header
         divClass "imagem-cadastro-escolher" $ do
         divClass "cadastro-container" $ do
             divClass "opcao-cadastro" $ do
@@ -202,12 +194,12 @@ escolherCad = do
                 elClass "a" "titulo-opcao" $ text "Cadastrar como Restaurante"
 
 
-        footer
+        --footer
 
 --CADASTRAR-CLIENTE
 cadCliente :: DomBuilder t m => m()
 cadCliente = do
-        header
+        --header
         divClass "imagem-login" $ do
         divClass "cadastro-container" $ do
             elClass "div" "cadastro-box" $ do
@@ -242,7 +234,7 @@ cadCliente = do
                     elClass "li" "elemento-cadastro-box" $ do
                         elClass "button" "btn-default"$ text "Cadastrar"
 
-        footer
+        --footer
 
 
 frontend :: Frontend (R FrontendRoute)
@@ -257,7 +249,25 @@ _frontend_head = do
     --elClass "p" "teste" $ text "Testando CSS!"   divClass "" $ do
     -- el "p" $ text $ T.pack commonStuff
 
-    mainPag
+    elClass "nav" "navbar navbar-default" $ do
+        divClass "container-fluid" $ do
+           divClass "container-header" $ do
+                elClass "div" "navbar-header" $ do
+                    elAttr "button" (
+                                 --   "type" =: "button" <>
+                                     "class" =: "navbar-toggle collapsed" <>
+                                     "data-toggle" =: "collapse" <>
+                                     "data-target" =: "#bs-example-navbar-collapse-1" <>
+                                     "aria-expand" =: "false") $ do
+                         elClass "span" "icon-bar" $ blank
+                         elClass "span" "icon-bar" $ blank
+                         elClass "span" "icon-bar" $ blank
+                    elClass "a" "navbar-brand" $ text "Mesa Livre"
+        --divClass "collapse navbar-collapse navbar-right" $ do
+        mainPag
+
+
+    footer
 
 
     elAttr "scrpit" ("href" =: static @"js/bootstrap.min.js") blank
